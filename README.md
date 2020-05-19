@@ -1,1 +1,1 @@
-# Faisal Salad [801-093-363]
+# This is the initial README file for the course
