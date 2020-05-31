@@ -6,7 +6,8 @@
   <title>Blog Project</title>
   <meta charset="utf-8">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="stylesheet" href="../public/css/styles.css">
+  <link rel="stylesheet" href="../public/css/forms.css">
 </head>
 
 
@@ -27,13 +28,25 @@
               </div>
             </nav>
 
+            <div class="backgroundImage">
+                <img class="backgroundImage" src="../public/images/BackgroundImage.jpeg" alt="backgroundImage">
+            </div>
+
 
           <form class="" action="index.html" method="post">
               <h1>Create a Post</h1>
-              <label for="postTitle">Enter in a Title</label>
-              <input type="text" name="postTitle" id="postTitle" placeholder="Blog Title">
-              <label for="postText">Enter in blog content</label>
-              <textarea name="postText" id="postText" rows="8" cols="80" placeholder="Blog content"></textarea>
+
+                <label for="postTitle">Enter in a Title:</label>
+                <div class="">
+                  <input type="text" name="postTitle" id="postTitle" placeholder="Blog Title">
+                </div>
+
+
+                <label for="postText">Enter in blog content:</label>
+                <div class="">
+                  <textarea name="postText" id="postText" rows="8" cols="80" placeholder="Blog content"></textarea>
+                </div>
+
           </form>
 
 
