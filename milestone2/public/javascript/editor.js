@@ -7,9 +7,9 @@ $(document).ready(function(){
   var count = 0;
   var first = true;
 
-  img1.src = "public/images/BackgroundImage.jpeg";
-  img2.src = "public/images/BackgroundImage2.jpg";
-  img3.src = "public/images/BackgroundImage3.jpg";
+  img1.src = "images/BackgroundImage.jpeg";
+  img2.src = "images/BackgroundImage2.jpg";
+  img3.src = "images/BackgroundImage3.jpg";
 
   imgArray.push(img1);
   imgArray.push(img2);
@@ -48,6 +48,11 @@ $(document).ready(function(){
       $(".content").css("font-size","14px");
   });
 
+
+  // $(".deleteButton").on("click", function(event){
+  //     event.preventDefault();
+  //
+  // });
 
   // $(document).on("keydown", function(event){
   //     if(event.key === "i"){

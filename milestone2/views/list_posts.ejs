@@ -1,0 +1,37 @@
+
+<%- include("partials/header"); -%>
+  <style>
+    table, th, td {
+      border: 1px solid black;
+      padding: 5px;
+    }
+    table {
+      border-spacing: 15px;
+      margin: 5% auto;
+    }
+    main{
+      text-align: center;
+    }
+  </style>
+
+  <div class="operationResult">
+      <p>Operation Result Placeholder</p>
+  </div>
+
+  <table>
+    <tr>
+      <th>PostTitle</th>
+      <td colspan="4">Operations</td>
+    </tr>
+    <% posts.forEach(function(post){ %>
+    <tr>
+      <td><%=post.title%></td>
+      <td><a href="/posts/<%=post._id%>">View</a></td>
+      <td><a href="/edit/<%=post._id%>">Edit</a></td>
+      <td><a href="/delete/<%=post._id%>">Delete</a></td>
+      <td><a href="#">Enable/Disable</a></td>
+    </tr>
+    <% }) %>
+  </table>
+
+<%- include("partials/footer"); -%>
