@@ -1,0 +1,25 @@
+
+<%- include("partials/header"); -%>
+
+<div class="container">
+    <h1>Home</h1>
+    <p> <%= startingContent %> </p>
+
+
+    <% posts.forEach(function(post){ %>
+
+    <h1><%=post.title%></h1>
+    <p>
+    <%=post.content.substring(0, 100) + " ..."%>
+    <a href="/posts/<%=post._id%>">Read More</a>
+    </p>
+
+
+    <% }) %>
+</div>
+
+
+<!-- <button class="increase" type="button" name="button">Increase</button>
+<button class="decrease" type="button" name="button">Decrease</button>
+<button class="default" type="button" name="button">Default</button> -->
+<%- include("partials/footer"); -%>
