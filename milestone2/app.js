@@ -68,7 +68,7 @@ app.route("/users/:user_id")
     const userID = req.params.user_id;
     User.update(
       {_id: userID},
-      {username: req.body.username, content: req.body.password},
+      {username: req.body.username, password: req.body.password},
       {overwrite: true},
       function(err){
         if(!err){
