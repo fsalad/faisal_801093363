@@ -27,6 +27,11 @@ const postSchema = new mongoose.Schema ({
     content: String
 });
 
+const userSchema = new mongoose.Schema ({
+    username: String,
+    password: String
+});
+
 const Post = mongoose.model("Post", postSchema);
 
 app.get("/", function(req,res){
@@ -36,6 +41,57 @@ app.get("/", function(req,res){
         posts: posts
         });
     });
+});
+
+
+app.route("/users")
+.get(function(req,res){
+    User.find({}, function(err, posts){
+      res.json();
+    });
+})
+.post(function(req,res){
+    const user = new User({
+      username: req.body.username,
+      password: req.body.password
+    });
+});
+
+app.route("/users/:user_id")
+.get(function(req,res){
+    const userID = req.params.user_id;
+    User.find({_id: userID}, function(err, posts){
+      res.json();
+    });
+})
+.put(function(req,res){
+    const userID = req.params.user_id;
+    User.update(
+      {_id: userID},
+      {username: req.body.username, content: req.body.password},
+      {overwrite: true},
+      function(err){
+        if(!err){
+          console.log("Successfully updated entry.");
+          res.json();
+        } else {
+          console.log(err);
+        }
+      }
+    );
+})
+.delete(function(req,res){
+    const userID = req.params.user_id;
+    User.deleteOne(
+      {_id: userID},
+      function(err){
+        if (!err){
+          res.json();
+        } else {
+          res.send(err);
+        }
+      }
+    );
 });
 
 app.route("/create").
